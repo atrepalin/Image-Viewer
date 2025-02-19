@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:core="clr-namespace:ImageViewer.Core"
         xmlns:vm="clr-namespace:ImageViewer.MVVM.ViewModel"
-        xmlns:components="clr-namespace:ImageViewer.Components"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Image Viewer"
@@ -51,9 +50,9 @@
                         <ColumnDefinition Width="100" />
                     </Grid.ColumnDefinitions>
 
-                    <components:CustomToolBar Background="#252525"
-                                              ToolBarTray.IsLocked="True"
-                                              Height="36">
+                    <StackPanel Background="#252525"
+                                Orientation="Horizontal"
+                                Height="36">
                         <Menu Background="Transparent"
                               VerticalAlignment="Center">
                             <MenuItem Header="Изображение"
@@ -69,7 +68,11 @@
                             </MenuItem>
                         </Menu>
 
-                        <Separator Margin="4" />
+                        <Rectangle Width="1"
+                                   Height="20"
+                                   Fill="White"
+                                   VerticalAlignment="Center"
+                                   Margin="2" />
 
                         <TextBlock Text="Масштаб:"
                                    VerticalAlignment="Center"
@@ -90,7 +93,7 @@
                             <sys:Int32>300</sys:Int32>
                             <sys:Int32>500</sys:Int32>
                         </ComboBox>
-                    </components:CustomToolBar>
+                    </StackPanel>
 
 
                     <TextBlock Grid.Column="1"
